@@ -6,7 +6,7 @@ import "./style/globals.css";
 function App() {
   return (
     <>
-      <div className="relative min-h-screen bg-[#0a0a0a] text-white overflow-x-hidden">
+      <div className="relative min-h-dvh bg-[#0a0a0a] text-white overflow-x-hidden">
         <Background />
         <Navbar/>
 
