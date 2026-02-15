@@ -1,6 +1,8 @@
 import { Background } from "./components/Background";
-import { Hero } from "./components/Hero";
 import { Navbar } from "./components/Navbar";
+import { Hero } from "./components/Hero";
+import { About } from "./components/About";
+
 import "./style/globals.css";
 
 function App() {
@@ -12,6 +14,7 @@ function App() {
 
         <main className="relative z-10">
           <Hero/>
+          <About/>
         </main>
         
       </div>
