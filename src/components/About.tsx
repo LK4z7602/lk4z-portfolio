@@ -87,7 +87,7 @@ const MilestoneCard = memo(({ milestone, index }: MilestoneCardProps) => {
       <div className="group relative p-6 lg:p-8 rounded-2xl bg-[#111111] border border-white/5 hover:border-laranjao/30 transition-all duration-500 hover:shadow-xl hover:shadow-laranjao/5">
         <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-laranjao/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         <div className="relative flex items-start gap-5">
-          <div className="shrink-0 w-12 h-12 rounded-xl bg-laranjao/10 flex items-center justify-center group-hover:bg-laranjao/20 transition-colors">
+          <div className="shrink-0 w-12 h-12 rounded-xl bg-laranjao/10 flex items-center justify-center group-hover:bg-laranjao/20 transition-colors duration-500">
             <Suspense fallback={<IconFallback />}>
               <Icon className="text-laranjao" />
             </Suspense>
