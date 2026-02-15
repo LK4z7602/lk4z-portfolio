@@ -6,7 +6,10 @@
     --color-laranjao-hover: #ff8533;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Inter', sans-serif;
-    scroll-behavior: smooth;
 }

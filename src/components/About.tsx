@@ -122,7 +122,7 @@ const AboutContent = () => {
   );
 
   return (
-    <section id="about" className="relative pb-32 pt-16 overflow-hidden">
+    <section id="about" className="relative py-32 overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
