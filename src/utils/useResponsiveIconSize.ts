@@ -22,7 +22,7 @@ const useResponsiveIconSize = (baseSize: number) => {
           multiplier = 1.4;
           break;
         default:
-          multiplier = 1.5;
+          multiplier = 1.45;
       }
 
       setSize(Math.round(baseSize * multiplier));
