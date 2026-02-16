@@ -4,19 +4,20 @@ import { Hero } from "./components/Hero";
 import { About } from "./components/About";
 
 import "./style/globals.css";
+import { TechStack } from "./components/TechStackSection/TechStack";
 
 function App() {
   return (
     <>
       <div className="relative min-h-dvh bg-[#0a0a0a] text-white overflow-x-hidden">
         <Background />
-        <Navbar/>
+        <Navbar />
 
         <main className="relative z-10">
-          <Hero/>
-          <About/>
+          <Hero />
+          <About />
+          <TechStack />
         </main>
-        
       </div>
     </>
   );
