@@ -202,7 +202,7 @@ const TechStackContent = () => {
           </p>
         </motion.div>
 
-        <div className="flex flex-wrap justify-center gap-4 md:gap-6 *:w-1/4 sm:*:w-1/5 md:*:w-1/6">
+        <div className="flex flex-wrap justify-center gap-4 md:gap-6 *:w-1/4 sm:*:w-1/5 md:*:w-1/7">
           {techCards}
         </div>
       </div>
