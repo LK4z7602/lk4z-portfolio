@@ -2,16 +2,16 @@ import { lazy, Suspense, memo } from "react";
 import { motion } from "framer-motion";
 
 const GitHubIcon = lazy(() =>
-  import("@mui/icons-material/GitHub").then((m) => ({ default: m.default })),
+  import("react-icons/fa").then((m) => ({ default: m.FaGithub })),
 );
 const SourceOutlinedIcon = lazy(() =>
-  import("@mui/icons-material/SourceOutlined").then((m) => ({
-    default: m.default,
+  import("react-icons/ri").then((m) => ({
+    default: m.RiFolderChartLine,
   })),
 );
 const ArrowDownwardIcon = lazy(() =>
-  import("@mui/icons-material/ArrowDownward").then((m) => ({
-    default: m.default,
+  import("react-icons/fa").then((m) => ({
+    default: m.FaArrowDown,
   })),
 );
 
@@ -91,7 +91,7 @@ const HeroContent = () => {
               whileTap={{ scale: 0.98 }}
             >
               <Suspense fallback={<IconFallback />}>
-                <SourceOutlinedIcon />
+                <SourceOutlinedIcon size={24} />
               </Suspense>
               Ver Projetos{" "}
               <Suspense fallback={<IconFallback />}>
@@ -106,7 +106,7 @@ const HeroContent = () => {
               whileTap={{ scale: 0.98 }}
             >
               <Suspense fallback={<IconFallback />}>
-                <GitHubIcon />
+                <GitHubIcon size={24}/>
               </Suspense>
               Meu GitHub
             </motion.a>

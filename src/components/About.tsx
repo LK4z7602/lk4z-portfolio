@@ -2,23 +2,23 @@ import { motion } from "framer-motion";
 import { lazy, Suspense, memo, useMemo } from "react";
 
 const RocketLaunchOutlinedIcon = lazy(() =>
-  import("@mui/icons-material/RocketLaunchOutlined").then((m) => ({
-    default: m.default,
+  import("react-icons/go").then((m) => ({
+    default: m.GoRocket,
   })),
 );
 const CodeOutlinedIcon = lazy(() =>
-  import("@mui/icons-material/CodeOutlined").then((m) => ({
-    default: m.default,
+  import("react-icons/io").then((m) => ({
+    default: m.IoMdCode,
   })),
 );
 const ElectricBoltOutlinedIcon = lazy(() =>
-  import("@mui/icons-material/ElectricBoltOutlined").then((m) => ({
-    default: m.default,
+  import("react-icons/bi").then((m) => ({
+    default: m.BiSolidZap,
   })),
 );
 const GpsFixedOutlinedIcon = lazy(() =>
-  import("@mui/icons-material/GpsFixedOutlined").then((m) => ({
-    default: m.default,
+  import("react-icons/tb").then((m) => ({
+    default: m.TbTargetArrow,
   })),
 );
 
@@ -89,7 +89,7 @@ const MilestoneCard = memo(({ milestone, index }: MilestoneCardProps) => {
         <div className="relative flex items-start gap-5">
           <div className="shrink-0 w-12 h-12 rounded-xl bg-laranjao/10 flex items-center justify-center group-hover:bg-laranjao/20 transition-colors duration-500">
             <Suspense fallback={<IconFallback />}>
-              <Icon className="text-laranjao" />
+              <Icon className="text-laranjao" size={24} />
             </Suspense>
           </div>
 
