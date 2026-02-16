@@ -16,19 +16,23 @@ export const Background = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext("2d", { alpha: false });
     if (!ctx) return;
 
     let mouseX = window.innerWidth / 2;
     let mouseY = window.innerHeight / 2;
-    const fadeRadius = 150
+    let lastFrameTime = 0;
+    const fps = 30;
+    const frameTime = 1000 / fps;
+    const fadeRadius = 150;
 
-    canvas.addEventListener("mousemove", (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       const rect = canvas.getBoundingClientRect();
-
       mouseX = e.clientX - rect.left;
       mouseY = e.clientY - rect.top;
-    });
+    };
+
+    canvas.addEventListener("mousemove", handleMouseMove, { passive: true });
 
     const resize = () => {
       canvas.width = window.innerWidth;
@@ -40,14 +44,17 @@ export const Background = () => {
 
     let particles: Particle[] = [];
 
-    const particleCount = Math.floor((canvas.width * canvas.height) / 9000);
+    // Reduzir partículas em telas pequenas
+    const particleCount = Math.floor(
+      (canvas.width * canvas.height) / (window.innerWidth < 768 ? 15000 : 9000)
+    );
 
     for (let i = 0; i < particleCount; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.7) * 0.3,
-        vy: (Math.random() - 0.7) * 0.3,
+        vx: (Math.random() - 0.6) * 0.4,
+        vy: (Math.random() - 0.6) * 0.4,
         size: Math.random() * 1.5 + 0.6,
         opacity: Math.random() * 0.5 + 0.3,
       });
@@ -100,8 +107,13 @@ export const Background = () => {
       }
     };
 
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const animate = (currentTime: number) => {
+      if (currentTime - lastFrameTime < frameTime) {
+        requestAnimationFrame(animate);
+        return;
+      }
+
+      lastFrameTime = currentTime;
 
       ctx.fillStyle = "#0b0a0a";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -148,10 +160,11 @@ export const Background = () => {
       requestAnimationFrame(animate);
     };
 
-    animate();
+    requestAnimationFrame(animate);
 
     return () => {
       window.removeEventListener("resize", resize);
+      canvas.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 

@@ -1,4 +1,4 @@
-import { Suspense, memo } from "react";
+import { memo } from "react";
 import { motion } from "framer-motion";
 import useResponsiveIconSize from "../../utils/useResponsiveIconSize";
 
@@ -13,11 +13,9 @@ interface TechCardProps {
 interface TechStackItem {
   id: string;
   name: string;
-  icon: React.LazyExoticComponent<React.ComponentType<{ size: number }>>;
+  icon: React.ComponentType<{ size: number }>;
   size: number;
 }
-
-const IconFallback = () => <span className="w-12 h-12 inline-block" />;
 
 const TechCard = memo(
   ({ tech, index, hoveredTech, onMouseEnter, onMouseLeave }: TechCardProps) => {
@@ -43,7 +41,6 @@ const TechCard = memo(
               : "hover:border-white/10"
           }`}
         >
-
           <div
             className={`absolute inset-0 rounded-2xl bg-laranjao/10 opacity-0 transition-opacity duration-300 ${
               hoveredTech === tech.id ? "opacity-100" : "group-hover:opacity-50"
@@ -57,9 +54,7 @@ const TechCard = memo(
                 : "text-gray-400 group-hover:text-gray-200"
             }`}
           >
-            <Suspense fallback={<IconFallback />}>
-              <Icon size={responsiveSize} />
-            </Suspense>
+            <Icon size={responsiveSize} />
           </div>
 
           <motion.div
@@ -78,6 +73,8 @@ const TechCard = memo(
     );
   },
 );
+
+TechCard.displayName = "TechCard";
 
 export default TechCard;
 export type { TechCardProps, TechStackItem };

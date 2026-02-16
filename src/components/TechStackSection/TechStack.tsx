@@ -1,164 +1,24 @@
-import { useState, lazy, memo, useMemo } from "react";
+import { useState, memo, useMemo } from "react";
 import { motion } from "framer-motion";
 
-import TechCard, {type TechStackItem} from "./TechCard";
-
-const FaReactIcon = lazy(() =>
-  import("react-icons/fa").then((m) => ({
-    default: m.FaReact,
-  })),
-);
-const FaJsSquareIcon = lazy(() =>
-  import("react-icons/fa").then((m) => ({
-    default: m.FaJsSquare,
-  })),
-);
-const FaHtml5Icon = lazy(() =>
-  import("react-icons/fa").then((m) => ({
-    default: m.FaHtml5,
-  })),
-);
-const FaCss3AltIcon = lazy(() =>
-  import("react-icons/fa").then((m) => ({
-    default: m.FaCss3Alt,
-  })),
-);
-const FaGitAltIcon = lazy(() =>
-  import("react-icons/fa").then((m) => ({
-    default: m.FaGitAlt,
-  })),
-);
-const BiLogoTypescriptIcon = lazy(() =>
-  import("react-icons/bi").then((m) => ({
-    default: m.BiLogoTypescript,
-  })),
-);
-const BiLogoTailwindCssIcon = lazy(() =>
-  import("react-icons/bi").then((m) => ({
-    default: m.BiLogoTailwindCss,
-  })),
-);
-const SiViteIcon = lazy(() =>
-  import("react-icons/si").then((m) => ({
-    default: m.SiVite,
-  })),
-);
-const SiReactRouterIcon = lazy(() =>
-  import("react-icons/si").then((m) => ({
-    default: m.SiReactrouter,
-  })),
-);
-const TbTanstackQueryIcon = lazy(() =>
-  import("react-icons/tb").then((m) => ({
-    default: m.TbBeach,
-  })),
-);
-const SiReactHookFormIcon = lazy(() =>
-  import("react-icons/si").then((m) => ({
-    default: m.SiReacthookform,
-  })),
-);
-const SiZodIcon = lazy(() =>
-  import("react-icons/si").then((m) => ({
-    default: m.SiZod,
-  })),
-);
-const SiFigmaIcon = lazy(() =>
-  import("react-icons/si").then((m) => ({
-    default: m.SiFigma,
-  })),
-);
-const TbFramerMotionIcon = lazy(() =>
-  import("react-icons/tb").then((m) => ({
-    default: m.TbBrandFramerMotion,
-  })),
-);
+import TechCard, { type TechStackItem } from "./TechCard";
+import { techIcons } from "./techIcons";
 
 const techStackData: TechStackItem[] = [
-  {
-    id: "react",
-    name: "React",
-    icon: FaReactIcon,
-    size: 50,
-  },
-  {
-    id: "typescript",
-    name: "TypeScript",
-    icon: BiLogoTypescriptIcon,
-    size: 60,
-  },
-  {
-    id: "javascript",
-    name: "JavaScript",
-    icon: FaJsSquareIcon,
-    size: 50,
-  },
-  {
-    id: "html5",
-    name: "HTML5",
-    icon: FaHtml5Icon,
-    size: 50,
-  },
-  {
-    id: "css3",
-    name: "CSS3",
-    icon: FaCss3AltIcon,
-    size: 50,
-  },
-  {
-    id: "tailwind",
-    name: "Tailwind CSS",
-    icon: BiLogoTailwindCssIcon,
-    size: 50,
-  },
-  {
-    id: "vite",
-    name: "Vite",
-    icon: SiViteIcon,
-    size: 50,
-  },
-  {
-    id: "git",
-    name: "Git",
-    icon: FaGitAltIcon,
-    size: 60,
-  },
-  {
-    id: "reactrouter",
-    name: "React Router",
-    icon: SiReactRouterIcon,
-    size: 50,
-  },
-  {
-    id: "tanstackquery",
-    name: "Tanstack Query",
-    icon: TbTanstackQueryIcon,
-    size: 50,
-  },
-  {
-    id: "reacthookform",
-    name: "React Hook Form",
-    icon: SiReactHookFormIcon,
-    size: 50,
-  },
-  {
-    id: "zod",
-    name: "Zod",
-    icon: SiZodIcon,
-    size: 50,
-  },
-  {
-    id: "figma",
-    name: "Figma",
-    icon: SiFigmaIcon,
-    size: 50,
-  },
-  {
-    id: "framermotion",
-    name: "Framer Motion",
-    icon: TbFramerMotionIcon,
-    size: 50,
-  },
+  { id: "react", name: "React", icon: techIcons.FaReact, size: 50 },
+  { id: "typescript", name: "TypeScript", icon: techIcons.BiLogoTypescript, size: 60 },
+  { id: "javascript", name: "JavaScript", icon: techIcons.FaJsSquare, size: 50 },
+  { id: "html5", name: "HTML5", icon: techIcons.FaHtml5, size: 50 },
+  { id: "css3", name: "CSS3", icon: techIcons.FaCss3Alt, size: 50 },
+  { id: "tailwind", name: "Tailwind CSS", icon: techIcons.BiLogoTailwindCss, size: 50 },
+  { id: "vite", name: "Vite", icon: techIcons.SiVite, size: 50 },
+  { id: "git", name: "Git", icon: techIcons.FaGitAlt, size: 60 },
+  { id: "reactrouter", name: "React Router", icon: techIcons.SiReactrouter, size: 50 },
+  { id: "tanstackquery", name: "Tanstack Query", icon: techIcons.TbBeach, size: 50 },
+  { id: "reacthookform", name: "React Hook Form", icon: techIcons.SiReacthookform, size: 50 },
+  { id: "zod", name: "Zod", icon: techIcons.SiZod, size: 50 },
+  { id: "figma", name: "Figma", icon: techIcons.SiFigma, size: 50 },
+  { id: "framermotion", name: "Framer Motion", icon: techIcons.TbBrandFramerMotion, size: 50 },
 ];
 
 TechCard.displayName = "TechCard";

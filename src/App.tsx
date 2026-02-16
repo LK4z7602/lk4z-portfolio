@@ -2,9 +2,9 @@ import { Background } from "./components/Background";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { About } from "./components/About";
+import { TechStack } from "./components/TechStackSection/TechStack";
 
 import "./style/globals.css";
-import { TechStack } from "./components/TechStackSection/TechStack";
 
 function App() {
   return (
