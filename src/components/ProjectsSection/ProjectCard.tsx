@@ -69,6 +69,7 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={`Ver projeto ${project.title} no GitHub`}
               className="w-10 h-10 rounded-full bg-gray-500/35 backdrop-blur-sm flex items-center justify-center text-white hover:bg-laranjao hover:text-white transition-all duration-300"
             >
               <projectIcons.projectIcons.FiGithub size={20} />
@@ -86,6 +87,7 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
                 href={project.live}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`Ver projeto ${project.title} live no google`}
                 whileHover={{ scale: 1.2 }}
                 transition={{ duration: 0.2 }}
                 className="text-white hover:text-laranjao transition-colors duration-300 cursor-pointer"
