@@ -118,6 +118,7 @@ export const Projects = () => {
             href="https://github.com/lk4z7602?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Ver todos os projetos no GitHub"
             className="inline-flex items-center gap-2 px-8 py-4 bg-white/5 text-white font-semibold rounded-xl border border-white/10 hover:bg-white/10 hover:border-laranjao/30 transition-all duration-300"
           >
             Ver Todos os Projetos no GitHub
