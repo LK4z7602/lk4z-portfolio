@@ -3,6 +3,7 @@ import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { About } from "./components/About";
 import { TechStack } from "./components/TechStackSection/TechStack";
+import { Projects } from "./components/ProjectsSection/Projects";
 
 import "./style/globals.css";
 
@@ -17,6 +18,7 @@ function App() {
           <Hero />
           <About />
           <TechStack />
+          <Projects />
         </main>
       </div>
     </>

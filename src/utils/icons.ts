@@ -5,6 +5,8 @@ import { TbBeach, TbBrandFramerMotion, TbTargetArrow } from "react-icons/tb";
 import { GoRocket } from "react-icons/go";
 import { IoMdCode } from "react-icons/io";
 import { RiFolderChartLine } from "react-icons/ri";
+import { FiGithub } from "react-icons/fi";
+import { MdArrowOutward } from "react-icons/md";
 
 const techIcons = {
   // Tech Stack Icons
@@ -38,4 +40,9 @@ const aboutIcons = {
   TbTargetArrow,
 } as const
 
-export default { techIcons, heroIcons, aboutIcons };
+const projectIcons = {
+  FiGithub,
+  MdArrowOutward
+} as const
+
+export default { techIcons, heroIcons, aboutIcons, projectIcons };
