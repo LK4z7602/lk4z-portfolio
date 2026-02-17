@@ -38,7 +38,7 @@ const milestones: Milestone[] = [
     year: "Dec 2025 - Presente",
     title: "Expandindo Portfólio",
     description:
-      "Construindo projetos reais e ampliando habilidades técnicas, testando novas tecnologias e contruindo projetos escaláveis",
+      "Construindo projetos reais e ampliando habilidades técnicas, testando novas tecnologias e construindo projetos escaláveis",
     icon: "TbTargetArrow",
   },
 ];

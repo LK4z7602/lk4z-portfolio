@@ -22,6 +22,7 @@ const techIcons = {
   SiZod,
   SiFigma,
   TbBrandFramerMotion,
+  FaGithub
 } as const;
 
 const heroIcons = {
