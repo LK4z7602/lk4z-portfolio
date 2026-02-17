@@ -1,34 +1,16 @@
 import { motion } from "framer-motion";
-import { lazy, Suspense, memo, useMemo } from "react";
+import { memo, useMemo } from "react";
+import icons from "../utils/icons";
 
-const RocketLaunchOutlinedIcon = lazy(() =>
-  import("react-icons/go").then((m) => ({
-    default: m.GoRocket,
-  })),
-);
-const CodeOutlinedIcon = lazy(() =>
-  import("react-icons/io").then((m) => ({
-    default: m.IoMdCode,
-  })),
-);
-const ElectricBoltOutlinedIcon = lazy(() =>
-  import("react-icons/bi").then((m) => ({
-    default: m.BiSolidZap,
-  })),
-);
-const GpsFixedOutlinedIcon = lazy(() =>
-  import("react-icons/tb").then((m) => ({
-    default: m.TbTargetArrow,
-  })),
-);
+const { aboutIcons } = icons;
 
-const IconFallback = () => <span className="w-6 h-6 inline-block" />;
+type MilestoneIcon = keyof typeof aboutIcons;
 
 interface Milestone {
   year: string;
   title: string;
   description: string;
-  icon: React.LazyExoticComponent<React.ComponentType<any>>;
+  icon: MilestoneIcon;
 }
 
 const milestones: Milestone[] = [
@@ -36,28 +18,28 @@ const milestones: Milestone[] = [
     year: "Jun 2024",
     title: "Primeiras Linhas de Código",
     description: "Iniciei os estudos no desenvolvimento web com HTML e CSS",
-    icon: RocketLaunchOutlinedIcon,
+    icon: "GoRocket",
   },
   {
     year: "Mai 2025",
     title: "Primeiros Projetos",
     description:
       "Comecei a construir projetos responsivos e interativos com HTML e CSS, começando os estudos de JavaScript",
-    icon: CodeOutlinedIcon,
+    icon: "IoMdCode",
   },
   {
     year: "Ago 2025",
     title: "Projetos Aprimorados",
     description:
       "Construí projetos grandes com HTML, CSS e JS, implementando novas tecnologias. Começando o estudo em React e TypeScript",
-    icon: ElectricBoltOutlinedIcon,
+    icon: "BiSolidZap",
   },
   {
     year: "Dec 2025 - Presente",
     title: "Expandindo Portfólio",
     description:
       "Construindo projetos reais e ampliando habilidades técnicas, testando novas tecnologias e contruindo projetos escaláveis",
-    icon: GpsFixedOutlinedIcon,
+    icon: "TbTargetArrow",
   },
 ];
 
@@ -67,7 +49,7 @@ interface MilestoneCardProps {
 }
 
 const MilestoneCard = memo(({ milestone, index }: MilestoneCardProps) => {
-  const Icon = milestone.icon;
+  const Icon = aboutIcons[milestone.icon] as React.ComponentType<{ className: string; size: number }>;
 
   return (
     <motion.div
@@ -88,9 +70,7 @@ const MilestoneCard = memo(({ milestone, index }: MilestoneCardProps) => {
         <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-laranjao/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         <div className="relative flex items-start gap-5">
           <div className="shrink-0 w-12 h-12 rounded-xl bg-laranjao/10 flex items-center justify-center group-hover:bg-laranjao/20 transition-colors duration-500">
-            <Suspense fallback={<IconFallback />}>
-              <Icon className="text-laranjao" size={24} />
-            </Suspense>
+            <Icon className="text-laranjao" size={24} />
           </div>
 
           <div className="flex-1">
@@ -142,7 +122,7 @@ const AboutContent = () => {
               aprimorar habilidades no ramo web, e sempre em busca de
               conhecimentos novos para expandir minha gama de tecnologias.
             </span>
-            Atualmente foocado no ecossistema React, usando TypeScript e
+            Atualmente focado no ecossistema React, usando TypeScript e
             Tailwind, mas sempre aberto a explorar novas tecnologias e desafios.
           </p>
         </motion.div>

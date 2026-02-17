@@ -1,21 +1,8 @@
-import { lazy, Suspense, memo } from "react";
+import { memo } from "react";
 import { motion } from "framer-motion";
+import icons from "../utils/icons";
 
-const GitHubIcon = lazy(() =>
-  import("react-icons/fa").then((m) => ({ default: m.FaGithub })),
-);
-const SourceOutlinedIcon = lazy(() =>
-  import("react-icons/ri").then((m) => ({
-    default: m.RiFolderChartLine,
-  })),
-);
-const ArrowDownwardIcon = lazy(() =>
-  import("react-icons/fa").then((m) => ({
-    default: m.FaArrowDown,
-  })),
-);
-
-const IconFallback = () => <span className="w-6 h-6 inline-block" />;
+const { heroIcons } = icons;
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -90,13 +77,9 @@ const HeroContent = () => {
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
             >
-              <Suspense fallback={<IconFallback />}>
-                <SourceOutlinedIcon size={24} />
-              </Suspense>
+              <heroIcons.RiFolderChartLine size={24} />
               Ver Projetos{" "}
-              <Suspense fallback={<IconFallback />}>
-                <ArrowDownwardIcon fontSize="small" />
-              </Suspense>
+              <heroIcons.FaArrowDown size={16} />
             </motion.a>
 
             <motion.a
@@ -105,9 +88,7 @@ const HeroContent = () => {
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
             >
-              <Suspense fallback={<IconFallback />}>
-                <GitHubIcon size={24}/>
-              </Suspense>
+              <heroIcons.FaGithub size={24}/>
               Meu GitHub
             </motion.a>
           </motion.div>
