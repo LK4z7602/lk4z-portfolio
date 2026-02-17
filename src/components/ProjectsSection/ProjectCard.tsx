@@ -30,6 +30,10 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
         delay: index * 0.1,
       },
     },
+    hovering: {
+      opacity: 1,
+      y: 0,
+    },
   };
 
   return (
@@ -37,6 +41,7 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
+      whileHover="hovering"
       viewport={{ once: true, margin: '-50px' }}
       className="group relative"
     >
@@ -46,35 +51,28 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
             src={project.image}
             alt={project.title}
             className="w-full h-full object-cover"
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.45 }}
             transition={{ duration: 0.4 }}
           />
-          <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0a] via-[#0a0a0a]/50 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0a] via-[#0a0a0a]/20 to-transparent" />
 
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileHover={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
             className="absolute top-4 right-4 flex gap-2"
+            variants={{
+              hidden: { opacity: 0, y: -10 },
+              visible: { opacity: 0, y: -10 },
+              hovering: { opacity: 1, y: 0 }
+            }}
+            transition={{ duration: 0.3 }}
           >
-            <a
+            <motion.a
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-laranjao hover:text-white transition-all duration-300"
+              className="w-10 h-10 rounded-full bg-gray-500/35 backdrop-blur-sm flex items-center justify-center text-white hover:bg-laranjao hover:text-white transition-all duration-300"
             >
               <projectIcons.projectIcons.FiGithub size={20} />
-            </a>
-            {project.live && (
-              <a
-                href={project.live}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-laranjao hover:text-white transition-all duration-300"
-              >
-                <projectIcons.projectIcons.MdArrowOutward size={20} />
-              </a>
-            )}
+            </motion.a>
           </motion.div>
         </div>
 
@@ -83,7 +81,20 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
             <h3 className="text-xl font-bold text-white group-hover:text-laranjao transition-colors duration-300">
               {project.title}
             </h3>
-            <projectIcons.projectIcons.MdArrowOutward size={20} />
+            {project.live ? (
+              <motion.a
+                href={project.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.2 }}
+                transition={{ duration: 0.2 }}
+                className="text-white hover:text-laranjao transition-colors duration-300 cursor-pointer"
+              >
+                <projectIcons.projectIcons.MdArrowOutward size={20} />
+              </motion.a>
+            ) : (
+              <projectIcons.projectIcons.MdArrowOutward size={20} />
+            )}
           </div>
           <p className="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-2">
             {project.description}
