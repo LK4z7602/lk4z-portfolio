@@ -4,6 +4,7 @@ import { Hero } from "./components/Hero";
 import { About } from "./components/About";
 import { TechStack } from "./components/TechStackSection/TechStack";
 import { Projects } from "./components/ProjectsSection/Projects";
+import { Footer } from "./components/Footer";
 
 import "./style/globals.css";
 
@@ -20,6 +21,8 @@ function App() {
           <TechStack />
           <Projects />
         </main>
+
+        <Footer />
       </div>
     </>
   );
