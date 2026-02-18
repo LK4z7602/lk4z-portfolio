@@ -116,14 +116,14 @@ const AboutContent = () => {
           </h2>
           <p className="max-w-2xl mx-auto text-lg text-gray-400 leading-relaxed">
             Sou o Lucas, um desenvolvedor web apaixonado por criar websites e
-            aplicações incríveis e performáticas.
+            aplicações incríveis e performáticas. 
             <span className="hidden sm:block">
-              Desde o início da minha jornada, tenho me dedicado a aprender e
+               Desde o início da minha jornada, tenho me dedicado a aprender e
               aprimorar habilidades no ramo web, e sempre em busca de
-              conhecimentos novos para expandir minha gama de tecnologias.
+              conhecimentos novos para expandir minha gama de tecnologias. 
             </span>
-            Atualmente focado no ecossistema React, usando TypeScript e
-            Tailwind, mas sempre aberto a explorar novas tecnologias e desafios.
+            &nbsp;Atualmente focado no ecossistema React, usando TypeScript e
+            Tailwind, mas sempre aberto a explorar novas tecnologias e desafios. 
           </p>
         </motion.div>
         <div className="relative">
