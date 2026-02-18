@@ -15,6 +15,7 @@ export const Footer = () => {
             <a
               href="https://github.com/lk4z7602"
               className="w-11 h-11 rounded-full bg-white/5 border border-white/5 flex items-center justify-center text-gray-400 hover:text-laranjao hover:border-laranjao/30 hover:bg-laranjao/10 transition-all duration-300"
+              aria-label="Meu GitHub"
             >
               <footerIcons.footerIcons.FiGithub size={18}/>
             </a>
@@ -22,6 +23,7 @@ export const Footer = () => {
             {/* <a
               href="https://linkedin.com/in/lk4z7602"
               className="w-11 h-11 rounded-full bg-white/5 border border-white/5 flex items-center justify-center text-gray-400 hover:text-laranjao hover:border-laranjao/30 hover:bg-laranjao/10 transition-all duration-300"
+              aria-label="Meu LinkedIn"
             >
               <footerIcons.footerIcons.FiLinkedin />
             </a> */}
@@ -29,6 +31,7 @@ export const Footer = () => {
             <a
               href="mailto:lk4zvpn@gmail.com"
               className="w-11 h-11 rounded-full bg-white/5 border border-white/5 flex items-center justify-center text-gray-400 hover:text-laranjao hover:border-laranjao/30 hover:bg-laranjao/10 transition-all duration-300"
+              aria-label="Contate-me por e-mail"
             >
               <footerIcons.footerIcons.MdMailOutline size={20}/>
             </a>
