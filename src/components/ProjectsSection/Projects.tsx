@@ -15,7 +15,7 @@ const projectsMock: Project[] = [
     title: "Gerador de Tickets",
     description:
       "App dinâmico de geração de tickets construído para o desafio do Frontend Mentor com validação de formulário.",
-    image: "/imgs/project1.avif",
+    image: "/imgs/project11.avif",
     tech: ["TypeScript", "React", "TailwindCSS", "ContextAPI", "Zod", "React Hook Form"],
     github: "https://github.com/LK4z7602/ticket-generator-frmentor",
     live: "https://ticket-generator-frmentor.vercel.app/",
@@ -24,7 +24,7 @@ const projectsMock: Project[] = [
     title: "App de To-Do List",
     description:
       "Aplicação básica de gerenciamento de tarefas com funcionalidades de adicionar, editar, excluir tarefas e filtrar por status",
-    image: "/imgs/project2.avif",
+    image: "/imgs/project22.avif",
     tech: ["TypeScript", "React", "TailwindCSS", "ContextAPI"],
     github: "https://github.com/LK4z7602/todolist-app-project",
     live: "https://todolist-app-project-lkz.vercel.app/",
@@ -33,7 +33,7 @@ const projectsMock: Project[] = [
     title: "Caseirinhos Amália",
     description:
       "Landing page para negócio local com design moderno e layout responsivo, sistema de navegação suave e otimização para SEO, com redirecionamento para WhatsApp.",
-    image: "/imgs/project3.avif",
+    image: "/imgs/project33.avif",
     tech: [
       "TypeScript",
       "React",
@@ -49,7 +49,7 @@ const projectsMock: Project[] = [
     title: "Cards Studio Ghibli",
     description:
       "Galeria de cards apresentando filmes do Studio Ghibli com integração de API e paginação.",
-    image: "/imgs/project4.avif",
+    image: "/imgs/project44.avif",
     tech: [
       "TypeScript",
       "React",
@@ -64,7 +64,7 @@ const projectsMock: Project[] = [
     title: "Calculadora de Idade",
     description:
       "Calculadora interativa de idade que computa anos, meses e dias exatos a partir da sua data de nascimento, com validação de entrada e design responsivo.",
-    image: "/imgs/project5.png",
+    image: "/imgs/project55.avif",
     tech: ["TypeScript", "React", "TailwindCSS"],
     github: "https://github.com/LK4z7602/age-calculator-app-frmentor",
     live: "https://age-calculator-app-frmentor.vercel.app/",
@@ -72,7 +72,7 @@ const projectsMock: Project[] = [
   {
     title: "Conferidor Mega Sena",
     description: "App simples e elegante que busca os resultados da Mega Sena.",
-    image: "/imgs/project6.png",
+    image: "/imgs/project66.avif",
     tech: ["HTML", "CSS", "JavaScript", "Fetch API"],
     github: "https://github.com/LK4z7602/conferidor-mega-sena",
     live: "https://conferidor-mega-sena.vercel.app/",
