@@ -15,7 +15,7 @@ const projectsMock: Project[] = [
     title: "Gerador de Tickets",
     description:
       "App dinâmico de geração de tickets construído para o desafio do Frontend Mentor com validação de formulário.",
-    image: "/imgs/project1.png",
+    image: "/imgs/project1.avif",
     tech: ["TypeScript", "React", "TailwindCSS", "ContextAPI", "Zod", "React Hook Form"],
     github: "https://github.com/LK4z7602/ticket-generator-frmentor",
     live: "https://ticket-generator-frmentor.vercel.app/",
@@ -24,7 +24,7 @@ const projectsMock: Project[] = [
     title: "App de To-Do List",
     description:
       "Aplicação básica de gerenciamento de tarefas com funcionalidades de adicionar, editar, excluir tarefas e filtrar por status",
-    image: "/imgs/project2.png",
+    image: "/imgs/project2.avif",
     tech: ["TypeScript", "React", "TailwindCSS", "ContextAPI"],
     github: "https://github.com/LK4z7602/todolist-app-project",
     live: "https://todolist-app-project-lkz.vercel.app/",
@@ -33,7 +33,7 @@ const projectsMock: Project[] = [
     title: "Caseirinhos Amália",
     description:
       "Landing page para negócio local com design moderno e layout responsivo, sistema de navegação suave e otimização para SEO, com redirecionamento para WhatsApp.",
-    image: "/imgs/project3.png",
+    image: "/imgs/project3.avif",
     tech: [
       "TypeScript",
       "React",
@@ -49,7 +49,7 @@ const projectsMock: Project[] = [
     title: "Cards Studio Ghibli",
     description:
       "Galeria de cards apresentando filmes do Studio Ghibli com integração de API e paginação.",
-    image: "/imgs/project4.png",
+    image: "/imgs/project4.avif",
     tech: [
       "TypeScript",
       "React",
