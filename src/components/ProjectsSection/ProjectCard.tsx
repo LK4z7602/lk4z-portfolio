@@ -56,7 +56,7 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
           />
           <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0a] via-[#0a0a0a]/20 to-transparent" />
 
-          <motion.div className="absolute top-4 right-4 flex gap-2">
+          {/* <motion.div className="absolute top-4 right-4 flex gap-2">
             <motion.a
               href={project.github}
               target="_blank"
@@ -66,7 +66,7 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
             >
               <projectIcons.projectIcons.FiGithub size={20} />
             </motion.a>
-          </motion.div>
+          </motion.div> */}
         </div>
 
         <div className="p-6">
@@ -74,22 +74,22 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
             <h3 className="text-xl font-bold text-white group-hover:text-laranjao transition-colors duration-300">
               {project.title}
             </h3>
-            {project.live ? (
+            {/* {project.live ? (
               <motion.a
                 href={project.live}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Ver projeto ${project.title} live no google`}
-                whileHover={{ scale: 1.2 }}
+                whileHover={{ scale: 1.07 }}
                 transition={{ duration: 0.2 }}
-                className="text-white hover:text-laranjao transition-colors duration-300 cursor-pointer hidden sm:inline"
-              >
+                className="text-white hover:text-laranjao-hover transition-all ease-out duration-300 cursor-pointer hidden sm:flex justify-center items-center gap-2 sm:border-b sm:border-gray-400 sm:pb-1 hover:border-laranjao sm:"
+              > 
                 Ver projeto{" "}
                 <projectIcons.projectIcons.MdArrowOutward size={20} />
               </motion.a>
             ) : (
               <projectIcons.projectIcons.MdArrowOutward size={20} />
-            )}
+            )} */}
           </div>
           <p className="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-2">
             {project.description}
@@ -108,7 +108,7 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
             ))}
           </motion.div>
 
-          <motion.div className="flex justify-between sm:hidden text-sm">
+          <motion.div className="flex justify-between text-sm">
             {project.github ? (
               <motion.a
                 href={project.github}
