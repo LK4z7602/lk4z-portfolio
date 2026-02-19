@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import projectIcons from '../../utils/icons';
+import { motion } from "framer-motion";
+import projectIcons from "../../utils/icons";
 
 interface Tech {
   name: string;
@@ -42,7 +42,7 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
       initial="hidden"
       whileInView="visible"
       whileHover="hovering"
-      viewport={{ once: true, margin: '-50px' }}
+      viewport={{ once: true, margin: "-50px" }}
       className="group relative"
     >
       <div className="relative overflow-hidden rounded-2xl bg-[#111111] border border-white/5 hover:border-laranjao/30 transition-all duration-500">
@@ -56,21 +56,13 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
           />
           <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0a] via-[#0a0a0a]/20 to-transparent" />
 
-          <motion.div
-            className="absolute top-4 right-4 flex gap-2"
-            variants={{
-              hidden: { opacity: 0, y: -10 },
-              visible: { opacity: 0, y: -10 },
-              hovering: { opacity: 1, y: 0 }
-            }}
-            transition={{ duration: 0.3 }}
-          >
+          <motion.div className="absolute top-4 right-4 flex gap-2">
             <motion.a
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`Ver projeto ${project.title} no GitHub`}
-              className="w-10 h-10 rounded-full bg-gray-500/35 backdrop-blur-sm flex items-center justify-center text-white hover:bg-laranjao hover:text-white transition-all duration-300"
+              className="w-10 h-10 rounded-full bg-gray-500/35 backdrop-blur-sm items-center justify-center text-white hover:bg-laranjao hover:text-white transition-all duration-300 hidden sm:flex"
             >
               <projectIcons.projectIcons.FiGithub size={20} />
             </motion.a>
@@ -90,8 +82,9 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
                 aria-label={`Ver projeto ${project.title} live no google`}
                 whileHover={{ scale: 1.2 }}
                 transition={{ duration: 0.2 }}
-                className="text-white hover:text-laranjao transition-colors duration-300 cursor-pointer"
+                className="text-white hover:text-laranjao transition-colors duration-300 cursor-pointer hidden sm:inline"
               >
+                Ver projeto{" "}
                 <projectIcons.projectIcons.MdArrowOutward size={20} />
               </motion.a>
             ) : (
@@ -101,10 +94,7 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
           <p className="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-2">
             {project.description}
           </p>
-          <motion.div
-            layout
-            className="flex flex-wrap gap-2"
-          >
+          <motion.div layout className="flex flex-wrap gap-2 mb-8">
             {project.tech.map((tech, techIndex) => (
               <motion.span
                 key={`${tech}-${techIndex}`}
@@ -113,9 +103,45 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
                 transition={{ delay: 0.2 + techIndex * 0.05 }}
                 className="px-3 py-1 text-xs font-medium text-gray-400 bg-white/5 rounded-full border border-white/5 hover:border-laranjao/30 hover:text-laranjao transition-all duration-300"
               >
-                {typeof tech === 'string' ? tech : tech.name}
+                {typeof tech === "string" ? tech : tech.name}
               </motion.span>
             ))}
+          </motion.div>
+
+          <motion.div className="flex justify-between sm:hidden text-sm">
+            {project.github ? (
+              <motion.a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Ver o repositorio do projeto ${project.title} no github`}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.2 }}
+                className="bg-laranjao hover:bg-laranjao-hover flex justify-center items-center gap-2 p-2.5 rounded-lg transition duration-300 cursor-pointer ease-out font-semibold"
+              >
+                Ver GitHub <projectIcons.projectIcons.FaGithub size={18} />
+              </motion.a>
+            ) : (
+              <p>Erro</p>
+            )}
+            {project.live ? (
+              <motion.a
+                className="flex justify-center items-center gap-2 p-2.5"
+                href={project.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Ver projeto ${project.title} live no google`}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.2 }}
+              >
+                <motion.div className="flex justify-center items-center gap-2 border-b border-gray-400 pb-1 hover:text-laranjao hover:border-laranjao transition-colors duration-300 ease-out">
+                  Ver Projeto{" "}
+                  <projectIcons.projectIcons.MdArrowOutward size={18} />
+                </motion.div>
+              </motion.a>
+            ) : (
+              <p>Erro</p>
+            )}
           </motion.div>
         </div>
 

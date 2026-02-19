@@ -42,14 +42,15 @@ const aboutIcons = {
 
 const projectIcons = {
   FiGithub,
-  MdArrowOutward
+  MdArrowOutward,
+  FaGithub
 } as const
 
 const footerIcons = {
   FiGithub,
   FiLinkedin,
   MdMailOutline,
-  FaRegHeart 
+  FaRegHeart
 } as const
 
 export default { techIcons, heroIcons, aboutIcons, projectIcons, footerIcons };
