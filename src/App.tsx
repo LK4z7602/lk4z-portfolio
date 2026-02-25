@@ -10,7 +10,6 @@ import "./style/globals.css";
 
 function App() {
   return (
-    <>
       <div className="relative min-h-dvh bg-[#0a0a0a] text-white overflow-x-hidden">
         <Background />
         <Navbar />
@@ -24,7 +23,6 @@ function App() {
 
         <Footer />
       </div>
-    </>
   );
 }
 

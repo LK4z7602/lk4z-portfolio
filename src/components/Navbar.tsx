@@ -26,7 +26,6 @@ export const Navbar = () => {
   }, [handleScroll]);
 
   return (
-    <>
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -99,6 +98,5 @@ export const Navbar = () => {
           </div>
         </div>
       </motion.nav>
-    </>
   );
 };

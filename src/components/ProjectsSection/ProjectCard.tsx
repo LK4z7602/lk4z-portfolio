@@ -56,17 +56,6 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
           />
           <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0a] via-[#0a0a0a]/20 to-transparent" />
 
-          {/* <motion.div className="absolute top-4 right-4 flex gap-2">
-            <motion.a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Ver projeto ${project.title} no GitHub`}
-              className="w-10 h-10 rounded-full bg-gray-500/35 backdrop-blur-sm items-center justify-center text-white hover:bg-laranjao hover:text-white transition-all duration-300 hidden sm:flex"
-            >
-              <projectIcons.projectIcons.FiGithub size={20} />
-            </motion.a>
-          </motion.div> */}
         </div>
 
         <div className="p-6">
@@ -74,22 +63,6 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
             <h3 className="text-xl font-bold text-white group-hover:text-laranjao transition-colors duration-300">
               {project.title}
             </h3>
-            {/* {project.live ? (
-              <motion.a
-                href={project.live}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Ver projeto ${project.title} live no google`}
-                whileHover={{ scale: 1.07 }}
-                transition={{ duration: 0.2 }}
-                className="text-white hover:text-laranjao-hover transition-all ease-out duration-300 cursor-pointer hidden sm:flex justify-center items-center gap-2 sm:border-b sm:border-gray-400 sm:pb-1 hover:border-laranjao sm:"
-              > 
-                Ver projeto{" "}
-                <projectIcons.projectIcons.MdArrowOutward size={20} />
-              </motion.a>
-            ) : (
-              <projectIcons.projectIcons.MdArrowOutward size={20} />
-            )} */}
           </div>
           <p className="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-2">
             {project.description}
